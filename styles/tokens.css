@@ -1,0 +1,123 @@
+/* ============================================================
+   TOKENS
+   Raw palette, then semantic aliases. Components only ever
+   reference the semantic layer, which is why .gulf can flip an
+   entire section's ground by reassigning nine variables.
+
+   GULF PALETTE LOGIC
+   The livery is blue bodywork with an orange stripe, so blue is
+   treated as paint (a surface) and orange as the only accent:
+     deep gulf blue  ground / surface
+     powder blue     detail, mono metadata on that surface
+     marigold        accent, kept scarce
+   Every value below is measured against its own ground; the
+   ratio is noted so replacements can be checked.
+   ============================================================ */
+
+:root {
+  /* --- raw: paper ground ------------------------------------ */
+  --c-paper:          #F6F3EE;  /* warm off-white, brochure stock */
+  --c-paper-raise:    #EDEAE3;
+  --c-paper-rule:     #DBD5CA;
+  --c-paper-rule-hi:  #C0B8AA;
+  --c-ink:            #131C22;  /* blue-black ink, 14.8:1 */
+  --c-ink-dim:        #5A6670;  /* 5.3:1 */
+  --c-ink-faint:      #7E8A93;  /* 3.2:1, ornament and outlines only */
+  --c-orange-deep:    #A04D08;  /* 5.3:1, accent TEXT on paper */
+  --c-orange:         #D9560F;  /* 3.5:1, accent GRAPHICS on paper */
+
+  /* --- raw: gulf blue ground -------------------------------- */
+  --c-gulf:           #0D2531;  /* deep gulf blue */
+  --c-gulf-raise:     #143240;
+  --c-gulf-rule:      #23495C;
+  --c-gulf-rule-hi:   #315F75;
+  --c-cream:          #F0EDE6;  /* 13.6:1 */
+  --c-powder:         #8FC4DC;  /* 8.4:1, gulf powder blue, metadata */
+  --c-slate:          #4E7C93;  /* 3.5:1, ornament and outlines only */
+  --c-marigold:       #F26B21;  /* 5.2:1, clears AA so one value covers
+                                   both text and graphics on blue */
+
+  /* --- semantic (paper is the default ground) --------------- */
+  --bg:              var(--c-paper);
+  --bg-raise:        var(--c-paper-raise);
+  --rule:            var(--c-paper-rule);
+  --rule-hi:         var(--c-paper-rule-hi);
+  --ink:             var(--c-ink);
+  --ink-dim:         var(--c-ink-dim);
+  --ink-faint:       var(--c-ink-faint);
+  --accent:          var(--c-orange-deep);  /* text, links, labels */
+  --accent-graphic:  var(--c-orange);       /* rules, numerals, ornament */
+
+  /* --- type ------------------------------------------------- */
+  --font-sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Archivo width-axis instances, driven via font-stretch */
+  --w-numeral:   72%;
+  --w-display:   86%;
+  --w-title:     90%;
+  --w-subtitle:  95%;
+  --w-text:     100%;
+
+  --t-numeral:   clamp(5.5rem, 16vw, 14rem);
+  --t-display:   clamp(4rem, 11vw, 10rem);
+  --t-stat:      clamp(2.5rem, 5vw, 3.75rem);
+  --t-h2:        clamp(1.75rem, 3.5vw, 2.75rem);
+  --t-h3:        clamp(1.5rem, 2.6vw, 2.125rem);
+  --t-lead:      1.25rem;
+  --t-body:      1.0625rem;
+  --t-meta:      0.75rem;     /* mono metadata */
+  --t-micro:     0.6875rem;   /* mono spec labels */
+
+  --track-tight:  -0.035em;
+  --track-snug:   -0.02em;
+  --track-mono:    0.09em;
+  --track-micro:   0.12em;
+
+  /* --- space: 4px base, deliberately sparse ----------------- */
+  --s-1:  0.25rem;   /*   4 */
+  --s-2:  0.5rem;    /*   8 */
+  --s-3:  0.75rem;   /*  12 */
+  --s-4:  1rem;      /*  16 */
+  --s-5:  1.5rem;    /*  24 */
+  --s-6:  2rem;      /*  32 */
+  --s-7:  3rem;      /*  48 */
+  --s-8:  4rem;      /*  64 */
+  --s-9:  6rem;      /*  96 */
+  --s-10: 8rem;      /* 128 */
+  --s-11: 11rem;     /* 176 */
+
+  /* --- layout ----------------------------------------------- */
+  --shell:     1240px;
+  --gutter:    clamp(1.25rem, 4vw, 2.5rem);
+  --bleed:     clamp(0.75rem, 2vw, 1.5rem);  /* always < --gutter */
+  --section-y: clamp(6rem, 12vw, 11rem);
+  --header-h:  60px;
+  --measure:   62ch;
+  --label-col: 210px;
+
+  /* --- motion: heavy decelerate, zero overshoot ------------- */
+  --dur-fast: 120ms;
+  --dur:      160ms;
+  --dur-slow: 200ms;
+  --ease:     cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ------------------------------------------------------------
+   Gulf blue ground. Reassigns the semantic layer only, so every
+   component inherits it with no per-component dark rules.
+   ------------------------------------------------------------ */
+.gulf {
+  --bg:             var(--c-gulf);
+  --bg-raise:       var(--c-gulf-raise);
+  --rule:           var(--c-gulf-rule);
+  --rule-hi:        var(--c-gulf-rule-hi);
+  --ink:            var(--c-cream);
+  --ink-dim:        var(--c-powder);
+  --ink-faint:      var(--c-slate);
+  --accent:         var(--c-marigold);
+  --accent-graphic: var(--c-marigold);
+
+  background-color: var(--bg);
+  color: var(--ink);
+}
