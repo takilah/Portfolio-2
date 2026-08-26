@@ -124,12 +124,14 @@ a { color: inherit; text-decoration: none; }
   border: 0;
 }
 
-/* Status pill, for work that is still open */
+/* Status pill, for work that is still open. Filled rather than
+   outlined, so its own text contrast never depends on the ground
+   it sits on, gulf blue included. */
 .tag {
   display: inline-block;
   padding: 0.3em 0.65em;
-  border: 1px solid var(--accent);
-  color: var(--accent);
+  background-color: var(--accent-graphic);
+  color: var(--c-ink);
   line-height: 1.3;
   white-space: nowrap;
 }
@@ -257,62 +259,50 @@ a { color: inherit; text-decoration: none; }
   color: var(--ink-dim);
 }
 
+/* Set in Courier Prime rather than Archivo, scoped to this one
+   element. A typewritten byline reads warmer than another huge
+   condensed-grotesque wordmark, and ties to the same document
+   register (typed reports, flight logs) as the rest of the page. */
 .masthead__name {
-  margin-top: var(--s-8);
-  font-size: var(--t-display);
-  font-stretch: var(--w-display);
+  margin-top: var(--s-7);
+  font-family: var(--font-name);
+  font-size: var(--t-name);
   font-weight: 700;
-  letter-spacing: var(--track-tight);
-  line-height: 0.88;
-  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
 }
 
 .masthead__rule { margin-top: var(--s-6); }
 
 .masthead__lead { margin-top: var(--s-6); }
 
-/* Record strip. Real measured numbers, read like a timing tower. */
-.stats {
+/* Hero layout: name and lead on the left, headshot on the right.
+   Stacks on narrow viewports, portrait falling below the copy. */
+.hero {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--s-6);
-  margin-top: var(--s-9);
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--s-8);
+  align-items: start;
 }
 
-.stat {
-  display: flex;
-  flex-direction: column-reverse;  /* number above label, dt stays first
-                                      in the DOM so it reads correctly */
-  gap: var(--s-3);
-  padding-top: var(--s-4);
-  border-top: 1px solid var(--rule-hi);
+@media (min-width: 56rem) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--s-9);
+  }
 }
 
-.stat__num {
-  font-size: var(--t-stat);
-  font-stretch: var(--w-title);
-  font-weight: 700;
-  letter-spacing: var(--track-snug);
-  line-height: 0.95;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
+.hero__portrait {
+  width: 100%;
+  max-width: 240px;
 }
 
-.stat__unit {
-  font-size: 0.44em;
-  font-stretch: var(--w-text);
-  font-weight: 500;
-  letter-spacing: 0;
-  margin-left: 0.2em;
-}
-
-.stat__key { color: var(--ink-dim); }
-
-/* Spec strip */
+/* Spec strip. Enlarged so Discipline, Focus, Based, and Status carry
+   real visual weight now that they are the masthead's only facts. */
 .strip {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: var(--s-5) var(--s-6);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--s-6) var(--s-6);
   margin-top: var(--s-9);
   padding-top: var(--s-5);
   border-top: 1px solid var(--rule);
@@ -326,10 +316,10 @@ a { color: inherit; text-decoration: none; }
 
 .strip__val {
   font-family: var(--font-mono);
-  font-size: var(--t-meta);
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  line-height: 1.4;
+  font-size: var(--t-strip-val);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.25;
 }
 
 .strip__val--accent { color: var(--accent); }
@@ -493,6 +483,15 @@ a { color: inherit; text-decoration: none; }
 .spec__row dd {
   font-size: 1rem;
   line-height: 1.5;
+}
+
+/* Stacks a secondary credential under a primary one within a single
+   row, e.g. a prior degree under the current one, instead of a
+   second dt/dd pair repeating the row label. */
+.spec__line { display: block; }
+.spec__line + .spec__line {
+  margin-top: 0.35em;
+  color: var(--ink-dim);
 }
 
 /* --- 8  Figures --------------------------------------------- */

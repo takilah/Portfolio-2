@@ -27,15 +27,18 @@
   --c-orange:         #D9560F;  /* 3.5:1, accent GRAPHICS on paper */
 
   /* --- raw: gulf blue ground -------------------------------- */
-  --c-gulf:           #0D2531;  /* deep gulf blue */
-  --c-gulf-raise:     #143240;
-  --c-gulf-rule:      #23495C;
-  --c-gulf-rule-hi:   #315F75;
-  --c-cream:          #F0EDE6;  /* 13.6:1 */
-  --c-powder:         #8FC4DC;  /* 8.4:1, gulf powder blue, metadata */
-  --c-slate:          #4E7C93;  /* 3.5:1, ornament and outlines only */
-  --c-marigold:       #F26B21;  /* 5.2:1, clears AA so one value covers
-                                   both text and graphics on blue */
+  /* Softened from the original near-black gulf blue: lighter and
+     pulled toward true blue (less teal undertone), while staying
+     dark enough that marigold text still clears 3:1 against it. */
+  --c-gulf:           #17324C;  /* soft gulf blue, ~4.3:1 vs marigold */
+  --c-gulf-raise:     #1C3A57;
+  --c-gulf-rule:      #2C4E6E;
+  --c-gulf-rule-hi:   #3D6084;
+  --c-cream:          #F0EDE6;  /* 11.3:1 */
+  --c-powder:         #8FC4DC;  /* 7.0:1, gulf powder blue, metadata */
+  --c-slate:          #5D89A3;  /* ornament and outlines only */
+  --c-marigold:       #F26B21;  /* large text / graphics only on blue,
+                                   filled surfaces (e.g. .tag) for small text */
 
   /* --- semantic (paper is the default ground) --------------- */
   --bg:              var(--c-paper);
@@ -51,6 +54,9 @@
   /* --- type ------------------------------------------------- */
   --font-sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  /* Scoped to the homepage name treatment only, so the rest of the
+     system keeps the original two-face pairing. */
+  --font-name: "Courier Prime", "Courier New", ui-monospace, monospace;
 
   /* Archivo width-axis instances, driven via font-stretch */
   --w-numeral:   72%;
@@ -61,7 +67,8 @@
 
   --t-numeral:   clamp(5.5rem, 16vw, 14rem);
   --t-display:   clamp(4rem, 11vw, 10rem);
-  --t-stat:      clamp(2.5rem, 5vw, 3.75rem);
+  --t-name:      clamp(2.75rem, 7vw, 5.5rem);
+  --t-strip-val: clamp(1.2rem, 2.2vw, 1.5rem);
   --t-h2:        clamp(1.75rem, 3.5vw, 2.75rem);
   --t-h3:        clamp(1.5rem, 2.6vw, 2.125rem);
   --t-lead:      1.25rem;

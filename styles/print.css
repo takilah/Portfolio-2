@@ -52,11 +52,11 @@
   .masthead { padding-top: 0; }
 
   /* Keep display type from eating a whole sheet */
-  .masthead__name { font-size: 34pt; }
+  .masthead__name { font-size: 30pt; }
   .h2 { font-size: 17pt; }
   .h3 { font-size: 13pt; }
   .title-lg { font-size: 26pt; }
-  .stat__num { font-size: 20pt; }
+  .strip__val { font-size: 12pt; }
   .contact__email { font-size: 15pt; }
 
   /* Outlined numerals do not print reliably, so fill them */
@@ -69,13 +69,13 @@
   .rule-accent { background: #000000; }
 
   .tag {
-    border-color: #000000;
+    background: none;
+    border: 1px solid #000000;
     color: #000000;
   }
 
   .project,
   .spec__row,
-  .stat,
   .figure { break-inside: avoid; }
 
   .split { gap: 8mm; }
