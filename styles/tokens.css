@@ -1,44 +1,44 @@
 /* ============================================================
    TOKENS
    Raw palette, then semantic aliases. Components only ever
-   reference the semantic layer, which is why .gulf can flip an
-   entire section's ground by reassigning nine variables.
+   reference the semantic layer, which is why .forest can flip
+   an entire section's ground by reassigning nine variables.
 
-   GULF PALETTE LOGIC
-   The livery is blue bodywork with an orange stripe, so blue is
-   treated as paint (a surface) and orange as the only accent:
-     deep gulf blue  ground / surface
-     powder blue     detail, mono metadata on that surface
-     marigold        accent, kept scarce
-   Every value below is measured against its own ground; the
-   ratio is noted so replacements can be checked.
+   PALETTE LOGIC
+   Deep green is the surface (a British Racing Green ground, not
+   an accent), amber is the one accent, kept scarce. Beige is the
+   paper. Peach is amber's quiet cousin: used constantly as the
+   dim/secondary tone on the green ground, never as a highlight,
+   which is what keeps amber the only true accent.
+   Amber inverts by ground: pure #FFB000 only reads against the
+   dark green (beige and amber are close enough in lightness that
+   pure amber nearly disappears on paper), so paper uses a deepened
+   amber for both text and graphics, and green uses the pure hue
+   for both. Every value below is measured against its own ground.
    ============================================================ */
 
 :root {
   /* --- raw: paper ground ------------------------------------ */
-  --c-paper:          #F6F3EE;  /* warm off-white, brochure stock */
-  --c-paper-raise:    #EDEAE3;
-  --c-paper-rule:     #DBD5CA;
-  --c-paper-rule-hi:  #C0B8AA;
-  --c-ink:            #131C22;  /* blue-black ink, 14.8:1 */
-  --c-ink-dim:        #5A6670;  /* 5.3:1 */
-  --c-ink-faint:      #7E8A93;  /* 3.2:1, ornament and outlines only */
-  --c-orange-deep:    #A04D08;  /* 5.3:1, accent TEXT on paper */
-  --c-orange:         #D9560F;  /* 3.5:1, accent GRAPHICS on paper */
+  --c-paper:          #F5F5DC;  /* beige */
+  --c-paper-raise:    #ECE8D0;
+  --c-paper-rule:     #DCD5B8;
+  --c-paper-rule-hi:  #C7BE9C;
+  --c-ink:            #1A1812;  /* warm near-black ink */
+  --c-ink-dim:        #5C5645;  /* 6.6:1 */
+  --c-ink-faint:      #A39C87;  /* ornament and outlines only */
+  --c-amber-deep:     #8F5A08;  /* 5.2:1, amber deepened for paper:
+                                   pure amber reads too close in
+                                   lightness to beige to serve as text */
 
-  /* --- raw: gulf blue ground -------------------------------- */
-  /* Softened from the original near-black gulf blue: lighter and
-     pulled toward true blue (less teal undertone), while staying
-     dark enough that marigold text still clears 3:1 against it. */
-  --c-gulf:           #17324C;  /* soft gulf blue, ~4.3:1 vs marigold */
-  --c-gulf-raise:     #1C3A57;
-  --c-gulf-rule:      #2C4E6E;
-  --c-gulf-rule-hi:   #3D6084;
-  --c-cream:          #F0EDE6;  /* 11.3:1 */
-  --c-powder:         #8FC4DC;  /* 7.0:1, gulf powder blue, metadata */
-  --c-slate:          #5D89A3;  /* ornament and outlines only */
-  --c-marigold:       #F26B21;  /* large text / graphics only on blue,
-                                   filled surfaces (e.g. .tag) for small text */
+  /* --- raw: forest green ground ------------------------------ */
+  --c-forest:         #004225;  /* deep British Racing Green */
+  --c-forest-raise:   #0B522E;
+  --c-forest-rule:    #1F5B3B;
+  --c-forest-rule-hi: #2E7350;
+  --c-cream:          #F5F5DC;  /* 10.5:1, same beige, reversed out */
+  --c-peach:          #FFCF9D;  /* 8.1:1, dim/secondary text, ornament */
+  --c-sage:           #4F7A5E;  /* ornament and outlines only */
+  --c-amber:          #FFB000;  /* 6.3:1, pure amber, text and graphics */
 
   /* --- semantic (paper is the default ground) --------------- */
   --bg:              var(--c-paper);
@@ -48,15 +48,19 @@
   --ink:             var(--c-ink);
   --ink-dim:         var(--c-ink-dim);
   --ink-faint:       var(--c-ink-faint);
-  --accent:          var(--c-orange-deep);  /* text, links, labels */
-  --accent-graphic:  var(--c-orange);       /* rules, numerals, ornament */
+  --accent:          var(--c-amber-deep);
+  --accent-graphic:  var(--c-amber-deep);
+  --on-accent:       var(--c-cream);        /* text drawn on a filled --accent chip */
 
   /* --- type ------------------------------------------------- */
   --font-sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
   /* Scoped to the homepage name treatment only, so the rest of the
-     system keeps the original two-face pairing. */
-  --font-name: "Courier Prime", "Courier New", ui-monospace, monospace;
+     system keeps the original two-face pairing. Campeno (the font
+     actually requested) is a paid Craft Supply Co. release, not on
+     Google Fonts; Space Grotesk stands in until real license files
+     exist to self-host. See index.html <head> for the swap note. */
+  --font-name: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
 
   /* Archivo width-axis instances, driven via font-stretch */
   --w-numeral:   72%;
@@ -66,7 +70,6 @@
   --w-text:     100%;
 
   --t-numeral:   clamp(5.5rem, 16vw, 14rem);
-  --t-display:   clamp(4rem, 11vw, 10rem);
   --t-name:      clamp(2.75rem, 7vw, 5.5rem);
   --t-strip-val: clamp(1.2rem, 2.2vw, 1.5rem);
   --t-h2:        clamp(1.75rem, 3.5vw, 2.75rem);
@@ -111,19 +114,20 @@
 }
 
 /* ------------------------------------------------------------
-   Gulf blue ground. Reassigns the semantic layer only, so every
-   component inherits it with no per-component dark rules.
+   Forest green ground. Reassigns the semantic layer only, so
+   every component inherits it with no per-component dark rules.
    ------------------------------------------------------------ */
-.gulf {
-  --bg:             var(--c-gulf);
-  --bg-raise:       var(--c-gulf-raise);
-  --rule:           var(--c-gulf-rule);
-  --rule-hi:        var(--c-gulf-rule-hi);
+.forest {
+  --bg:             var(--c-forest);
+  --bg-raise:       var(--c-forest-raise);
+  --rule:           var(--c-forest-rule);
+  --rule-hi:        var(--c-forest-rule-hi);
   --ink:            var(--c-cream);
-  --ink-dim:        var(--c-powder);
-  --ink-faint:      var(--c-slate);
-  --accent:         var(--c-marigold);
-  --accent-graphic: var(--c-marigold);
+  --ink-dim:        var(--c-peach);
+  --ink-faint:      var(--c-sage);
+  --accent:         var(--c-amber);
+  --accent-graphic: var(--c-amber);
+  --on-accent:      var(--c-ink);
 
   background-color: var(--bg);
   color: var(--ink);

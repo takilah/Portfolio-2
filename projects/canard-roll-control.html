@@ -4,34 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- ============================================================
-     PROJECT DETAIL TEMPLATE
-
-     Copy this file to projects/<slug>.html, fill it in, and point
-     the matching row in index.html at it (the href on the
-     <a class="project"> block, not just the visible text).
-
-     Everything marked >>> is placeholder guidance, not content.
-     Do not ship it as written. Update the docline's project number
-     and category, the <title>, the meta description, and the pager
-     links at the bottom to point at your real previous/next pages.
-
-     If a project can't show real images yet, whether under an NDA
-     or just at a team's request, see
-     projects/undertray-aerodynamics.html for the pattern: a
-     "Disclosure" block after the spec sheet, and
-     .figure__box--withheld in place of an empty figure box.
-
-     Keep the order: outcome, then spec sheet, then how you got
-     there. Senior readers decide whether to keep reading from the
-     first two lines, so lead with the result and a number.
-
-     No em-dashes anywhere on this site. Use commas, colons,
-     parentheses, or "to" for ranges.
-     ============================================================ -->
-
-<title>&gt;&gt;&gt; Project Title | Tariq Akilah</title>
-<meta name="description" content="&gt;&gt;&gt; One sentence: the outcome, with a number.">
+<title>Canard Roll Control CFD | Tariq Akilah</title>
+<meta name="description" content="SimScale CFD on a canard-controlled rocket airframe, delivering a roll torque coefficient dataset for closed-loop flight control.">
 <meta name="theme-color" content="#004225">
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23004225'/><rect x='6' y='14' width='20' height='4' fill='%23FFB000'/></svg>">
@@ -64,29 +38,26 @@
 
 <main>
 
-  <!-- Title block on forest green, matching the homepage masthead -->
   <section class="masthead band forest">
     <div class="shell">
 
       <div class="docline micro">
-        <span>&gt;&gt;&gt; Project 0X / Category</span>
+        <span>Project 02 / Fluid Dynamics</span>
         <span>2026 / Rev. 01</span>
       </div>
 
       <h1 class="title-lg" style="margin-top: var(--s-8)" data-reveal>
-        &gt;&gt;&gt; Project<br>Title Here
+        Canard Roll<br>Control CFD
       </h1>
 
       <hr class="rule-accent" data-reveal style="--i:1; margin-top: var(--s-6)">
 
       <p class="lead" data-reveal style="--i:2; margin-top: var(--s-6)">
-        &gt;&gt;&gt; The same outcome sentence used on the index card. Lead
-        with the result and a number, not the assignment.
-      </p>
-
-      <!-- Only if the work is still ongoing. Delete otherwise. -->
-      <p class="mono" data-reveal style="--i:3; margin-top: var(--s-6)">
-        <span class="tag micro">Current</span>
+        Ran 244 SimScale CFD cases for Thrust Stack, a canard-controlled
+        airframe built for closed-loop roll stabilization, sweeping
+        deflection from 0.55 to 9.9 degrees and freestream velocity from
+        33 to 113 m/s. Delivered a 162-point roll torque coefficient
+        dataset adopted directly into the flight control logic.
       </p>
 
     </div>
@@ -94,39 +65,38 @@
 
   <article class="section shell" id="body">
 
-    <!-- >>> SPEC SHEET. Fill every row or delete it. -------- -->
     <dl class="spec" data-reveal>
       <div class="spec__row">
         <dt>Timeframe</dt>
-        <dd>&gt;&gt;&gt; Date range, or a single year</dd>
+        <dd>June 2026 to August 2026</dd>
       </div>
       <div class="spec__row">
         <dt>Team</dt>
-        <dd>&gt;&gt;&gt; Organization, or "Personal build"</dd>
+        <dd>Mission College, Thrust Stack, a faculty-advised 4-student research team</dd>
       </div>
       <div class="spec__row">
         <dt>Role</dt>
-        <dd>&gt;&gt;&gt; Your title on this project</dd>
+        <dd>Fluid Dynamics Research Intern</dd>
       </div>
       <div class="spec__row">
         <dt>Scope</dt>
-        <dd>&gt;&gt;&gt; What you personally own on this project, in one line</dd>
+        <dd>Full deflection and velocity sweep, plus a custom servo housing designed and manufactured to sit flush with the airframe</dd>
       </div>
       <div class="spec__row">
         <dt>Constraints</dt>
-        <dd>&gt;&gt;&gt; Budget, deadline, rule citation, or spec that bounded the design</dd>
+        <dd>&gt;&gt;&gt; Simulation budget, canard geometry envelope, any airframe interface limits</dd>
       </div>
       <div class="spec__row">
         <dt>Tools</dt>
-        <dd>&gt;&gt;&gt; CAD, simulation, fabrication tools used</dd>
+        <dd>SimScale, SolidWorks</dd>
       </div>
       <div class="spec__row">
         <dt>Methods</dt>
-        <dd>&gt;&gt;&gt; Turbulence model, mesh size, boundary conditions, test setup</dd>
+        <dd>&gt;&gt;&gt; Turbulence model, mesh strategy, how the 244-case sweep was structured</dd>
       </div>
       <div class="spec__row">
         <dt>Status</dt>
-        <dd>&gt;&gt;&gt; Measured outcome, with units</dd>
+        <dd>162-point roll torque coefficient dataset delivered, adopted into the rocket's flight control logic; smaller canard geometry selected for finer control</dd>
       </div>
     </dl>
 
@@ -172,11 +142,11 @@
         <figure class="figure">
           <!-- Swap for <img src="..." alt="..."> and describe what it shows -->
           <div class="figure__box"></div>
-          <figcaption class="micro">Fig. 01 / &gt;&gt;&gt; What this shows</figcaption>
+          <figcaption class="micro">Fig. 01 / CFD deflection sweep, contour view</figcaption>
         </figure>
         <figure class="figure">
           <div class="figure__box"></div>
-          <figcaption class="micro">Fig. 02 / &gt;&gt;&gt; What this shows</figcaption>
+          <figcaption class="micro">Fig. 02 / Servo housing, as manufactured</figcaption>
         </figure>
       </div>
     </section>
@@ -198,18 +168,18 @@
       <div class="figures" style="margin-top: var(--s-7)">
         <figure class="figure">
           <div class="figure__box"></div>
-          <figcaption class="micro">Fig. 03 / &gt;&gt;&gt; What this shows</figcaption>
+          <figcaption class="micro">Fig. 03 / Roll torque coefficient vs. deflection</figcaption>
         </figure>
         <figure class="figure">
           <div class="figure__box"></div>
-          <figcaption class="micro">Fig. 04 / &gt;&gt;&gt; What this shows</figcaption>
+          <figcaption class="micro">Fig. 04 / Airframe, integrated</figcaption>
         </figure>
       </div>
     </section>
 
     <nav class="pager mono" style="margin-top: var(--s-10)" aria-label="Project navigation">
       <a class="link" href="../index.html#work">← Index</a>
-      <a class="link" href="&gt;&gt;&gt;-next-project-slug.html">Next / &gt;&gt;&gt; Next Project Title →</a>
+      <a class="link" href="avionics-bay.html">Next / Two-Stage Avionics Bay →</a>
     </nav>
 
   </article>

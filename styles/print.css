@@ -2,7 +2,7 @@
    PRINT
    Hiring managers print portfolios. The spec-sheet layout
    already suits paper, so this mostly removes screen chrome
-   and flattens the gulf blue bands back to ink on white.
+   and flattens the forest green bands back to ink on white.
    ============================================================ */
 
 @media print {
@@ -21,8 +21,8 @@
     --section-y: 0;
   }
 
-  /* Flatten the gulf bands. Never print a saturated full page. */
-  .gulf {
+  /* Flatten the forest bands. Never print a saturated full page. */
+  .forest {
     --bg: #FFFFFF;
     --bg-raise: #FFFFFF;
     --rule: #BBBBBB;

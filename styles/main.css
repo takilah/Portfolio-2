@@ -43,8 +43,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 ::selection {
-  background-color: var(--c-marigold);
-  color: var(--c-gulf);
+  background-color: var(--c-amber);
+  color: var(--c-forest);
 }
 
 /* Skip link, visible only on focus */
@@ -54,8 +54,8 @@ a { color: inherit; text-decoration: none; }
   top: -100%;
   z-index: 100;
   padding: var(--s-3) var(--s-4);
-  background-color: var(--c-marigold);
-  color: var(--c-gulf);
+  background-color: var(--c-amber);
+  color: var(--c-forest);
   font-family: var(--font-mono);
   font-size: var(--t-meta);
   letter-spacing: var(--track-mono);
@@ -125,13 +125,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* Status pill, for work that is still open. Filled rather than
-   outlined, so its own text contrast never depends on the ground
-   it sits on, gulf blue included. */
+   outlined, using --on-accent for its text so contrast holds even
+   though --accent itself flips from a deep, dark amber on paper to
+   a pure, light amber on the forest ground. */
 .tag {
   display: inline-block;
   padding: 0.3em 0.65em;
-  background-color: var(--accent-graphic);
-  color: var(--c-ink);
+  background-color: var(--accent);
+  color: var(--on-accent);
   line-height: 1.3;
   white-space: nowrap;
 }
@@ -183,18 +184,18 @@ a { color: inherit; text-decoration: none; }
 
 /* --- 4  Header ---------------------------------------------- */
 
-/* Gulf blue at all times. It sits seamlessly on the masthead at
-   rest, then reads as a solid chrome rail over the paper below. */
+/* Forest green at all times. It sits seamlessly on the masthead at
+   rest, then reads as a solid rail over the paper below. */
 .header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: var(--c-gulf);
+  background-color: var(--c-forest);
   color: var(--c-cream);
   border-bottom: 1px solid transparent;
   transition: border-color var(--dur) var(--ease);
 }
-.header.is-scrolled { border-bottom-color: var(--c-marigold); }
+.header.is-scrolled { border-bottom-color: var(--c-amber); }
 
 .header__inner {
   display: flex;
@@ -220,7 +221,7 @@ a { color: inherit; text-decoration: none; }
 .nav__link {
   position: relative;
   padding-block: var(--s-2);
-  color: var(--c-powder);
+  color: var(--c-peach);
   transition: color var(--dur-fast) var(--ease);
 }
 .nav__link::after {
@@ -230,7 +231,7 @@ a { color: inherit; text-decoration: none; }
   bottom: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--c-marigold);
+  background-color: var(--c-amber);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--dur) var(--ease);
@@ -259,10 +260,9 @@ a { color: inherit; text-decoration: none; }
   color: var(--ink-dim);
 }
 
-/* Set in Courier Prime rather than Archivo, scoped to this one
-   element. A typewritten byline reads warmer than another huge
-   condensed-grotesque wordmark, and ties to the same document
-   register (typed reports, flight logs) as the rest of the page. */
+/* Set in Space Grotesk rather than Archivo, scoped to this one
+   element, so the name reads as a distinct, considered choice
+   rather than another huge condensed-grotesque wordmark. */
 .masthead__name {
   margin-top: var(--s-7);
   font-family: var(--font-name);
@@ -314,11 +314,16 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: var(--s-2);
 }
 
+/* Archivo, not mono: the label above stays mono/micro as a proper
+   spec tag, but a value this large in monospace reads as a code
+   block rather than a spec-sheet entry. This matches how the About
+   section's spec__row already pairs a mono label with a sans value. */
 .strip__val {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
+  font-stretch: var(--w-title);
   font-size: var(--t-strip-val);
   font-weight: 700;
-  letter-spacing: 0;
+  letter-spacing: var(--track-snug);
   line-height: 1.25;
 }
 
@@ -505,6 +510,15 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid var(--rule);
 }
 
+/* Static, not absolutely positioned, so the corner crop marks
+   (below) keep painting above it rather than under it. */
+.figure__box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Corner crop marks, a drawing-frame convention */
 .figure__box::before,
 .figure__box::after {
@@ -528,6 +542,16 @@ a { color: inherit; text-decoration: none; }
 }
 
 .figure__box--portrait { aspect-ratio: 4 / 5; }
+
+/* An image slot deliberately withheld, rather than one simply not
+   filled in yet. The label sits inside the frame itself, at the
+   exact point of absence, not just in the caption below it. */
+.figure__box--withheld {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.figure__box--withheld span { color: var(--ink-dim); }
 
 .figure figcaption {
   margin-top: var(--s-3);

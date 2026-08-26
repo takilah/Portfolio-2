@@ -6,19 +6,25 @@
 
 <title>Tariq Akilah | Mechanical Engineering</title>
 <meta name="description" content="Mechanical engineering portfolio. Aerodynamics, avionics, and vehicle hardware. CFD, CAD, and fabrication work by Tariq Akilah, UC Irvine.">
-<meta name="theme-color" content="#0D2531">
+<meta name="theme-color" content="#004225">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tariq Akilah | Mechanical Engineering">
 <meta property="og:description" content="Aerodynamics Engineer on UCI's Formula SAE EV team. A record of aero, avionics, and fabrication work.">
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230D2531'/><rect x='6' y='14' width='20' height='4' fill='%23F26B21'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23004225'/><rect x='6' y='14' width='20' height='4' fill='%23FFB000'/></svg>">
 
 <!-- Archivo carries a width axis (wdth 62 to 125), which is what lets one
-     family supply both the condensed display voice and the reading voice. -->
+     family supply both the condensed display voice and the reading voice.
+
+     Space Grotesk stands in for the masthead name only, in place of
+     Campeno: Campeno is a paid Craft Supply Co. release (not on Google
+     Fonts), so it can't be embedded without licensed font files. Supply
+     those files and this link plus the --font-name token in
+     styles/tokens.css are the only two places that need to change. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Courier+Prime:wght@400;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap">
 
 <link rel="stylesheet" href="styles/tokens.css">
 <link rel="stylesheet" href="styles/main.css">
@@ -37,7 +43,7 @@
   <div class="shell header__inner">
     <a class="header__name" href="#top">Tariq&nbsp;Akilah</a>
     <nav class="nav mono" aria-label="Sections">
-      <a class="nav__link" href="#work">Work</a>
+      <a class="nav__link" href="#work">Experience</a>
       <a class="nav__link" href="#about">About</a>
       <a class="nav__link" href="#contact">Contact</a>
     </nav>
@@ -47,9 +53,9 @@
 <main id="top">
 
   <!-- ============================================================
-       MASTHEAD, on gulf blue. Runs seamlessly out of the header.
+       MASTHEAD, on forest green. Runs seamlessly out of the header.
        ============================================================ -->
-  <section class="masthead band gulf">
+  <section class="masthead band forest">
     <div class="shell">
 
       <div class="docline micro">
@@ -74,24 +80,24 @@
         </div>
 
         <figure class="hero__portrait figure" data-reveal style="--i:2">
-          <!-- Swap the div for <img src="..." alt="..."> when you have the photo -->
-          <div class="figure__box figure__box--portrait"></div>
-          <figcaption class="micro">Fig. 01 / Headshot, placeholder</figcaption>
+          <div class="figure__box figure__box--portrait">
+            <img src="images/headshot.jpg" alt="Tariq Akilah">
+          </div>
         </figure>
       </div>
 
       <dl class="strip" data-reveal style="--i:3">
         <div>
           <dt class="micro strip__key">Discipline</dt>
-          <dd class="strip__val">3rd-Year Mechanical Engineering, UC Irvine</dd>
+          <dd class="strip__val">3rd-Year Mechanical Engineering, UC&nbsp;Irvine</dd>
         </div>
         <div>
           <dt class="micro strip__key">Focus</dt>
-          <dd class="strip__val">Aerodynamics / Avionics / Structures</dd>
+          <dd class="strip__val">Fluid&nbsp;Dynamics / Structural&nbsp;Analysis</dd>
         </div>
         <div>
           <dt class="micro strip__key">Based</dt>
-          <dd class="strip__val">San Jose, CA / Irvine, CA</dd>
+          <dd class="strip__val">San Jose,&nbsp;CA / Irvine,&nbsp;CA</dd>
         </div>
         <div>
           <dt class="micro strip__key">Status</dt>
@@ -104,10 +110,9 @@
 
 
   <!-- ============================================================
-       RECORD, on paper.
+       EXPERIENCE, on paper.
 
-       One heading for both employed roles and personal builds,
-       rather than a compound "Experience and Projects" label. Each
+       One heading for both employed roles and personal builds. Each
        entry's org line and dates make clear which is which without
        needing a second section.
 
@@ -121,22 +126,19 @@
        ============================================================ -->
   <section class="section shell" id="work">
 
-    <p class="mono kicker" data-reveal>Record / 08 entries</p>
-    <h2 class="h2" data-reveal style="--i:1">Record</h2>
+    <p class="mono kicker" data-reveal>Experience / 08 entries</p>
+    <h2 class="h2" data-reveal style="--i:1">Experience</h2>
 
     <div class="index">
 
       <!-- 01 -------------------------------------------------- -->
-      <a class="project" href="projects/_template.html" data-reveal>
+      <a class="project" href="projects/undertray-aerodynamics.html" data-reveal>
         <span class="project__num" aria-hidden="true">01</span>
         <div class="project__body">
           <span class="project__org micro">Anteater Electric Racing / UCI Formula SAE EV</span>
           <h3 class="h3">Undertray Aerodynamics</h3>
           <p class="project__desc">
-            Raised undertray downforce from under 50 N to 160 N by reprofiling
-            the inlet and diffuser geometry in SolidWorks, validated across a
-            0 to 3 degree braking-pitch sweep in STAR-CCM+. Targeting 200 to
-            250 N for the final iteration.
+            Raised undertray downforce by reprofiling the inlet and diffuser geometry in SolidWorks, validated across pitch and yaw angles in STAR-CCM+.
           </p>
           <ul class="project__meta mono">
             <li><span class="tag micro">Current</span></li>
@@ -149,7 +151,7 @@
       </a>
 
       <!-- 02 -------------------------------------------------- -->
-      <a class="project" href="projects/_template.html" data-reveal>
+      <a class="project" href="projects/canard-roll-control.html" data-reveal>
         <span class="project__num" aria-hidden="true">02</span>
         <div class="project__body">
           <span class="project__org micro">Mission College / Faculty-Advised Research</span>
@@ -171,7 +173,7 @@
       </a>
 
       <!-- 03 -------------------------------------------------- -->
-      <a class="project" href="projects/_template.html" data-reveal>
+      <a class="project" href="projects/avionics-bay.html" data-reveal>
         <span class="project__num" aria-hidden="true">03</span>
         <div class="project__body">
           <span class="project__org micro">Mission Launch Rocketry</span>
@@ -193,7 +195,7 @@
       </a>
 
       <!-- 04 -------------------------------------------------- -->
-      <a class="project" href="projects/_template.html" data-reveal>
+      <a class="project" href="projects/l1-certification.html" data-reveal>
         <span class="project__num" aria-hidden="true">04</span>
         <div class="project__body">
           <span class="project__org micro">Personal Build / NAR Level 1 Certification</span>
@@ -215,7 +217,7 @@
       </a>
 
       <!-- 05 -------------------------------------------------- -->
-      <a class="project" href="projects/_template.html" data-reveal>
+      <a class="project" href="projects/motorized-trike.html" data-reveal>
         <span class="project__num" aria-hidden="true">05</span>
         <div class="project__body">
           <span class="project__org micro">Sole Designer and Fabricator</span>
@@ -238,7 +240,7 @@
       </a>
 
       <!-- 06 -------------------------------------------------- -->
-      <a class="project" href="projects/_template.html" data-reveal>
+      <a class="project" href="projects/coilover-assembly.html" data-reveal>
         <span class="project__num" aria-hidden="true">06</span>
         <div class="project__body">
           <span class="project__org micro">Honors Engineering Project / Mission College</span>
@@ -260,7 +262,7 @@
       </a>
 
       <!-- 07 -------------------------------------------------- -->
-      <a class="project" href="projects/_template.html" data-reveal>
+      <a class="project" href="projects/daf-tank-redesign.html" data-reveal>
         <span class="project__num" aria-hidden="true">07</span>
         <div class="project__body">
           <span class="project__org micro">Engineering Course Project / Mission College</span>
@@ -282,7 +284,7 @@
       </a>
 
       <!-- 08 -------------------------------------------------- -->
-      <a class="project" href="projects/_template.html" data-reveal>
+      <a class="project" href="projects/arduino-steering.html" data-reveal>
         <span class="project__num" aria-hidden="true">08</span>
         <div class="project__body">
           <span class="project__org micro">Honors Engineering Project / Mission College</span>
@@ -304,7 +306,7 @@
     </div>
 
     <div class="index__foot micro">
-      <span>End of record</span>
+      <span>End of index</span>
       <span>08 / 08</span>
     </div>
 
@@ -346,12 +348,6 @@
             above, or about whatever you're building.
           </p>
         </div>
-
-        <figure class="figure" data-reveal style="--i:1; margin-top: var(--s-8); max-width: 340px">
-          <!-- Swap the div for <img src="..." alt="..."> when you have the photo -->
-          <div class="figure__box figure__box--portrait"></div>
-          <figcaption class="micro">Fig. 01 / Portrait, placeholder</figcaption>
-        </figure>
       </div>
 
       <!-- Spec sheet. Hiring managers scan this for keywords, so keep
@@ -416,11 +412,11 @@
 
 
   <!-- ============================================================
-       CONTACT, back on gulf blue to bookend the page. A real
+       CONTACT, back on forest green to bookend the page. A real
        address, not a form: forms need a backend and read as
        lower-trust than an email you will actually answer.
        ============================================================ -->
-  <section class="section band gulf" id="contact">
+  <section class="section band forest" id="contact">
     <div class="shell">
 
       <p class="mono kicker" data-reveal>Contact</p>
@@ -446,7 +442,7 @@
 
 </main>
 
-<footer class="footer band gulf">
+<footer class="footer band forest">
   <div class="shell footer__inner micro">
     <span>Tariq Akilah / Mechanical Engineering</span>
     <span>Built in San Jose, California</span>
