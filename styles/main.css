@@ -244,8 +244,82 @@ a { color: inherit; text-decoration: none; }
 /* --- 5  Masthead -------------------------------------------- */
 
 .masthead {
+  position: relative;
   padding-top: var(--s-8);
   padding-bottom: var(--section-y);
+}
+
+/* .shell here becomes a positioned sibling so it stacks above the
+   track without a z-index: it comes second in DOM order among
+   positioned elements, so it paints on top regardless. */
+.masthead > .shell { position: relative; }
+
+.masthead__track {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.masthead__track svg {
+  position: absolute;
+  left: -1%;
+  bottom: -6%;
+  width: clamp(320px, 78vw, 980px);
+  height: auto;
+  opacity: 0.16;
+}
+
+/* Undertray project page only: sits in the empty space beside the
+   title, not spanning the whole section the way .masthead__track
+   does on the homepage. */
+.masthead__chassis {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.masthead__chassis svg {
+  position: absolute;
+  right: 4%;
+  top: 28%;
+  width: clamp(304px, 40vw, 576px);
+  height: auto;
+  opacity: 0.55;
+}
+
+/* Same idea as .masthead__chassis, sized for a tall narrow subject
+   (rocket airframe) instead of a wide one. */
+.masthead__rocket {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.masthead__rocket svg {
+  position: absolute;
+  right: calc(10% + 142px);
+  top: 14%;
+  width: clamp(120px, 15vw, 220px);
+  height: auto;
+  opacity: 0.55;
+}
+
+/* Same idea again, this time for a wide side-view diagram instead of
+   a tall or portrait one. Sits low in the band as a strip. */
+.masthead__stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.masthead__stage svg {
+  position: absolute;
+  right: calc(2% + 76px);
+  top: calc(2% + 303px);
+  width: clamp(427px, 45.5vw, 739px);
+  height: auto;
+  opacity: 0.55;
+  transform: rotate(45deg);
 }
 
 /* Document control line. One only, or it becomes cosplay. */
@@ -562,14 +636,35 @@ a { color: inherit; text-decoration: none; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: var(--s-6);
+  align-items: start;
 }
 
 /* --- 9  Contact and footer ---------------------------------- */
 
+/* #contact needs its own positioning context: it's a plain .section,
+   not .masthead, so it doesn't inherit that rule. */
+#contact { position: relative; }
+#contact > .shell { position: relative; }
+
+.contact__track {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact__track svg {
+  width: clamp(480px, 120vw, 1350px);
+  height: auto;
+  opacity: 0.16;
+}
+
 .contact__email {
   display: inline-block;
   margin-top: var(--s-6);
-  font-size: var(--t-h2);
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
   font-stretch: var(--w-title);
   font-weight: 600;
   letter-spacing: var(--track-snug);
@@ -585,6 +680,7 @@ a { color: inherit; text-decoration: none; }
   margin-top: var(--s-8);
   padding-top: var(--s-5);
   border-top: 1px solid var(--rule);
+  font-size: 1.125rem;
 }
 
 .footer {

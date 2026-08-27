@@ -39,6 +39,19 @@
 <main>
 
   <section class="masthead band forest">
+
+    <!-- Decorative only: traced from the airframe render you sent,
+         outline only, no internal shading. aria-hidden since it
+         carries no content. -->
+    <div class="masthead__rocket" aria-hidden="true">
+      <svg viewBox="0 0 180 520" fill="none" stroke="var(--ink-faint)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M 90,29 C 100,60 108,100 108,139 L 108,193 L 120,199 L 120,211 L 108,217 L 108,459 L 134,483 L 134,495 L 108,495 L 72,495 L 46,495 L 46,483 L 72,459 L 72,217 L 60,211 L 60,199 L 72,193 L 72,139 C 72,100 80,60 90,29 Z"/>
+        <circle cx="90" cy="205" r="9"/>
+        <path d="M 87,201 L 94,210"/>
+        <path d="M 90,459 L 90,495"/>
+      </svg>
+    </div>
+
     <div class="shell">
 
       <div class="docline micro">
@@ -80,19 +93,11 @@
       </div>
       <div class="spec__row">
         <dt>Scope</dt>
-        <dd>Full deflection and velocity sweep, plus a custom servo housing designed and manufactured to sit flush with the airframe</dd>
-      </div>
-      <div class="spec__row">
-        <dt>Constraints</dt>
-        <dd>&gt;&gt;&gt; Simulation budget, canard geometry envelope, any airframe interface limits</dd>
+        <dd>Full deflection and velocity sweep, plus a custom servo motor mount designed and manufactured to sit flush with the airframe</dd>
       </div>
       <div class="spec__row">
         <dt>Tools</dt>
         <dd>SimScale, SolidWorks</dd>
-      </div>
-      <div class="spec__row">
-        <dt>Methods</dt>
-        <dd>&gt;&gt;&gt; Turbulence model, mesh strategy, how the 244-case sweep was structured</dd>
       </div>
       <div class="spec__row">
         <dt>Status</dt>
@@ -107,15 +112,17 @@
       </header>
       <div class="prose">
         <p>
-          &gt;&gt;&gt; Two or three sentences on the actual constraint, not the
-          assignment. What was underperforming, what it cost the car, and which
-          number you were trying to move. State the operating point and the
-          units.
+          Thrust Stack's airframe uses active canards to correct roll in
+          flight, but the flight control team had no data on how much roll
+          torque a given deflection actually produced at a given airspeed.
+          Without that relationship, the controller had no way to turn a
+          commanded correction into an actual canard angle.
         </p>
         <p>
-          &gt;&gt;&gt; If a rule or standard bounded the design, name it. Readers
-          in your industry recognize those citations, and they establish that
-          you worked inside real limits rather than an open-ended exercise.
+          The dataset had to hold up across the vehicle's full flight
+          envelope, deflection from 0.55 to 9.9 degrees and freestream
+          velocity from 33 to 113 m/s, since roll authority changes with
+          both.
         </p>
       </div>
     </section>
@@ -127,27 +134,48 @@
       </header>
       <div class="prose">
         <p>
-          &gt;&gt;&gt; How you decided, not everything you did. Which load case
-          or ride height you chose and why, what you modeled versus what you
-          measured, and where the model disagreed with reality.
+          Built a SimScale sweep across the full deflection and velocity
+          range, running 244 cases and about 6,200 core-hours of simulations.
         </p>
         <p>
-          &gt;&gt;&gt; Include one decision you got wrong and corrected. It
-          costs nothing and it is the strongest credibility signal on a page
-          like this. Engineers trust people who report their own revisions.
+          The first canard geometry generated too much torque per degree of
+          deflection for the controller to make fine corrections near small
+          angles, so after reviewing the early sweep data, I scaled the
+          canards down ~30% smaller than
+          the original to trade peak torque for finer resolution. I also
+          designed and manufactured a custom servo mount in SolidWorks,
+          sized to sit flush with the airframe so the actuation hardware
+          would not add parasitic drag.
         </p>
       </div>
 
-      <div class="figures" style="margin-top: var(--s-7)">
-        <figure class="figure">
-          <!-- Swap for <img src="..." alt="..."> and describe what it shows -->
-          <div class="figure__box"></div>
-          <figcaption class="micro">Fig. 01 / CFD deflection sweep, contour view</figcaption>
-        </figure>
-        <figure class="figure">
-          <div class="figure__box"></div>
-          <figcaption class="micro">Fig. 02 / Servo housing, as manufactured</figcaption>
-        </figure>
+      <div style="margin-top: var(--s-7); max-width: 1104px">
+        <div style="display: flex; gap: var(--s-5); align-items: flex-start">
+          <figure class="figure" style="flex: 1.73 1 0; min-width: 0">
+            <div class="figure__box" style="aspect-ratio: 719 / 981">
+              <img src="../images/Meshed%20Airframe.png" alt="Meshed CFD model of the full canard-controlled airframe">
+            </div>
+            <figcaption class="micro">Fig. 01 / SimScale mesh, full airframe</figcaption>
+          </figure>
+          <figure class="figure" style="flex: 1 1 0; min-width: 0">
+            <div class="figure__box" style="aspect-ratio: 816 / 1928">
+              <img src="../images/Fully%20Assembeled%20Airframe.png" alt="Completed rocket airframe with nose cone, canard fin can, and static fin can labeled">
+            </div>
+            <figcaption class="micro">Fig. 02 / Completed airframe</figcaption>
+          </figure>
+          <figure class="figure" style="flex: 1.88 1 0; min-width: 0">
+            <div class="figure__box" style="aspect-ratio: 656 / 824">
+              <img src="../images/Servo%20Mount.png" alt="Servo mount CAD model">
+            </div>
+            <figcaption class="micro">Fig. 03 / Servo mount</figcaption>
+          </figure>
+          <figure class="figure" style="flex: 1.44 1 0; min-width: 0">
+            <div class="figure__box" style="aspect-ratio: 610 / 999">
+              <img src="../images/Servo%20Housing.png" alt="Servo housing CAD model">
+            </div>
+            <figcaption class="micro">Fig. 04 / Servo housing</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -158,22 +186,35 @@
       </header>
       <div class="prose">
         <p>
-          &gt;&gt;&gt; Measured outcomes with units, and the conditions they
-          were measured under. If the result missed the target, say by how much
-          and what you learned. A quantified miss reads better than a vague
-          success.
+          Converted the 162-point roll torque coefficient dataset into
+          angular acceleration using the airframe's roll moment of inertia,
+          then delivered it to the flight control team as the lookup table
+          the controller reads against commanded deflection and measured
+          rocket speed.
+        </p>
+        <p>
+          The conversion held up cleanly to a maximum deflection of 15
+          degrees, which now sets the controller's usable range. The rocket
+          is scheduled to fly in January 2027 at the Friends of Amateur
+          Rocketry site in the Mojave Desert, California.
         </p>
       </div>
 
-      <div class="figures" style="margin-top: var(--s-7)">
-        <figure class="figure">
-          <div class="figure__box"></div>
-          <figcaption class="micro">Fig. 03 / Roll torque coefficient vs. deflection</figcaption>
-        </figure>
-        <figure class="figure">
-          <div class="figure__box"></div>
-          <figcaption class="micro">Fig. 04 / Airframe, integrated</figcaption>
-        </figure>
+      <div style="margin-top: var(--s-7); max-width: 940px">
+        <div style="display: flex; gap: var(--s-5); align-items: flex-start">
+          <figure class="figure" style="flex: 1.7 1 0; min-width: 0">
+            <div class="figure__box" style="aspect-ratio: 1209 / 743">
+              <img src="../images/CFD%20Dataset%20Table.png" alt="Chart of rotational acceleration versus vertical velocity for each canard deflection angle">
+            </div>
+            <figcaption class="micro">Fig. 05 / Rotational acceleration vs. velocity, by deflection</figcaption>
+          </figure>
+          <figure class="figure" style="flex: 1 1 0; min-width: 0">
+            <div class="figure__box" style="aspect-ratio: 859 / 898">
+              <img src="../images/Canard%20Pressure%20Scene.png" alt="SimScale pressure contour around the canard airfoil cross-section">
+            </div>
+            <figcaption class="micro">Fig. 06 / SimScale pressure field, canard section</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 

@@ -46,6 +46,11 @@
   .header,
   .skip,
   .nav,
+  .masthead__track,
+  .masthead__chassis,
+  .masthead__rocket,
+  .masthead__stage,
+  .contact__track,
   .project__go { display: none; }
 
   .section { padding-block: 10mm; }

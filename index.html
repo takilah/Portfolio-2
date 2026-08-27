@@ -56,12 +56,18 @@
        MASTHEAD, on forest green. Runs seamlessly out of the header.
        ============================================================ -->
   <section class="masthead band forest">
-    <div class="shell">
 
-      <div class="docline micro">
-        <span>Portfolio / 2026</span>
-        <span>Mechanical Engineering</span>
-      </div>
+    <!-- Decorative only: traced from the circuit outline you sent,
+         two subpaths (outer edge, inner edge) filled with evenodd
+         so it reproduces the source exactly. aria-hidden since it
+         carries no content. -->
+    <div class="masthead__track" aria-hidden="true">
+      <svg viewBox="0 0 800 760" fill="var(--ink-faint)" fill-rule="evenodd">
+        <path d="M 413.0,758.5 L 389.0,757.5 L 311.0,738.5 L 39.0,658.5 L 7.0,646.5 L 0.5,638.0 L 0.5,627.0 L 11.5,610.0 L 32.5,588.0 L 92.0,528.5 L 113.0,513.5 L 121.0,512.5 L 136.0,518.5 L 226.0,571.5 L 253.0,573.5 L 276.0,565.5 L 294.5,547.0 L 305.5,531.0 L 307.5,509.0 L 303.5,494.0 L 298.0,485.5 L 237.0,438.5 L 220.5,421.0 L 219.5,411.0 L 228.0,400.5 L 234.0,397.5 L 258.0,394.5 L 290.0,404.5 L 316.0,428.5 L 336.0,424.5 L 347.5,419.0 L 300.0,386.5 L 262.0,364.5 L 254.5,356.0 L 257.5,344.0 L 276.0,330.5 L 414.0,255.5 L 488.0,211.5 L 626.0,118.5 L 757.0,13.5 L 780.0,0.5 L 793.0,2.5 L 799.5,12.0 L 797.5,34.0 L 740.5,215.0 L 697.0,248.5 L 650.0,279.5 L 639.0,279.5 L 615.0,266.5 L 605.0,266.5 L 594.5,281.0 L 577.5,322.0 L 562.0,342.5 L 557.0,344.5 L 490.0,342.5 L 473.0,351.5 L 462.5,364.0 L 455.5,383.0 L 455.5,399.0 L 461.5,418.0 L 458.5,441.0 L 430.5,478.0 L 429.5,512.0 L 422.5,531.0 L 367.5,610.0 L 357.5,633.0 L 358.5,647.0 L 366.5,663.0 L 424.5,735.0 L 424.5,749.0 L 421.0,754.5 L 413.0,758.5 Z M 409.5,744.0 L 409.5,738.0 L 352.5,668.0 L 343.5,647.0 L 343.5,630.0 L 359.5,595.0 L 407.5,527.0 L 414.5,510.0 L 414.5,484.0 L 418.5,468.0 L 445.5,434.0 L 446.5,420.0 L 440.5,401.0 L 440.5,386.0 L 449.5,358.0 L 464.0,339.5 L 486.0,327.5 L 554.0,329.5 L 569.5,305.0 L 583.5,270.0 L 594.0,257.5 L 606.0,251.5 L 616.0,251.5 L 644.0,265.5 L 727.5,207.0 L 776.5,54.0 L 784.0,15.5 L 761.0,29.5 L 634.0,131.5 L 547.0,191.5 L 448.0,253.5 L 271.5,352.0 L 347.0,399.5 L 362.5,417.0 L 362.5,424.0 L 355.0,432.5 L 318.0,444.5 L 308.0,441.5 L 286.0,419.5 L 273.0,412.5 L 249.0,408.5 L 234.5,415.0 L 306.0,472.5 L 318.5,491.0 L 322.5,507.0 L 322.5,525.0 L 319.5,535.0 L 307.5,555.0 L 289.0,574.5 L 278.0,581.5 L 257.0,587.5 L 221.0,585.5 L 138.0,536.5 L 122.0,528.5 L 116.0,528.5 L 106.0,535.5 L 14.5,630.0 L 18.0,635.5 L 42.0,643.5 L 238.0,699.5 L 285.0,715.5 L 381.0,740.5 L 409.5,744.0 Z"/>
+      </svg>
+    </div>
+
+    <div class="shell">
 
       <div class="hero">
         <div class="hero__main">
@@ -97,7 +103,7 @@
         </div>
         <div>
           <dt class="micro strip__key">Based</dt>
-          <dd class="strip__val">San Jose,&nbsp;CA / Irvine,&nbsp;CA</dd>
+          <dd class="strip__val">San Jose,&nbsp;CA<br>Irvine,&nbsp;CA</dd>
         </div>
         <div>
           <dt class="micro strip__key">Status</dt>
@@ -126,7 +132,7 @@
        ============================================================ -->
   <section class="section shell" id="work">
 
-    <p class="mono kicker" data-reveal>Experience / 08 entries</p>
+    <p class="mono kicker" data-reveal>Experience / 07 entries</p>
     <h2 class="h2" data-reveal style="--i:1">Experience</h2>
 
     <div class="index">
@@ -177,7 +183,7 @@
         <span class="project__num" aria-hidden="true">03</span>
         <div class="project__body">
           <span class="project__org micro">Mission Launch Rocketry</span>
-          <h3 class="h3">Two-Stage Avionics Bay</h3>
+          <h3 class="h3">Two-Stage Rocket Avionics Bay</h3>
           <p class="project__desc">
             Led a five-person avionics team through design, integration, and
             flight test of a two-stage high-power rocket. Cut avionics bay
@@ -188,7 +194,7 @@
           <ul class="project__meta mono">
             <li>Jul 2025 to Jun 2026</li>
             <li>Avionics Lead</li>
-            <li>OpenRocket, FDM</li>
+            <li>Onshape, SolidWorks, OpenRocket, FDM, Soldering</li>
           </ul>
         </div>
         <span class="project__go mono" aria-hidden="true">View →</span>
@@ -199,7 +205,7 @@
         <span class="project__num" aria-hidden="true">04</span>
         <div class="project__body">
           <span class="project__org micro">Personal Build / NAR Level 1 Certification</span>
-          <h3 class="h3">High-Power Certification Flight</h3>
+          <h3 class="h3">High-Power Rocketry Certification</h3>
           <p class="project__desc">
             Designed and FDM-printed a PETG-CF airframe on a Bambu Lab P1S,
             holding geometric symmetry under simulated flight loads at under
@@ -221,7 +227,7 @@
         <span class="project__num" aria-hidden="true">05</span>
         <div class="project__body">
           <span class="project__org micro">Sole Designer and Fabricator</span>
-          <h3 class="h3">Motorized Trike, Full Vehicle Build</h3>
+          <h3 class="h3">Motorized Trike - Full Vehicle Build</h3>
           <p class="project__desc">
             Built a motorized trike from recycled material for under $500 on
             a five-week deadline. Self-taught MIG welding for the 0.0478 in.
@@ -266,7 +272,7 @@
         <span class="project__num" aria-hidden="true">07</span>
         <div class="project__body">
           <span class="project__org micro">Engineering Course Project / Mission College</span>
-          <h3 class="h3">DAF Tank Redesign, SJSC Wastewater Facility</h3>
+          <h3 class="h3">DAF Tank Redesign - SJSC Wastewater Facility</h3>
           <p class="project__desc">
             Redesigned a dissolved air flotation tank against real plant
             dimensions for a simulated failure case. Delivered the full
@@ -277,27 +283,7 @@
           <ul class="project__meta mono">
             <li>2025</li>
             <li>Systems and Documentation</li>
-            <li>AutoCAD, SolidWorks</li>
-          </ul>
-        </div>
-        <span class="project__go mono" aria-hidden="true">View →</span>
-      </a>
-
-      <!-- 08 -------------------------------------------------- -->
-      <a class="project" href="projects/arduino-steering.html" data-reveal>
-        <span class="project__num" aria-hidden="true">08</span>
-        <div class="project__body">
-          <span class="project__org micro">Honors Engineering Project / Mission College</span>
-          <h3 class="h3">Arduino Steering and Throttle Control</h3>
-          <p class="project__desc">
-            Designed and fabricated a custom PVC chassis and front-axle steering
-            system in Fusion 360, then integrated a servo and high-torque DC
-            motors with an Arduino running C++ steering and throttle logic.
-          </p>
-          <ul class="project__meta mono">
-            <li>2025</li>
-            <li>Mechatronics</li>
-            <li>Fusion 360, Arduino, C++</li>
+            <li>AutoCAD, SolidWorks, Engineering Documentation</li>
           </ul>
         </div>
         <span class="project__go mono" aria-hidden="true">View →</span>
@@ -307,7 +293,7 @@
 
     <div class="index__foot micro">
       <span>End of index</span>
-      <span>08 / 08</span>
+      <span>07 / 07</span>
     </div>
 
   </section>
@@ -357,8 +343,8 @@
         <div class="spec__row">
           <dt>Education</dt>
           <dd>
-            <span class="spec__line">B.S. Mechanical Engineering, University of California, Irvine, expected December 2028</span>
-            <span class="spec__line">A.S.-T Physics, Mission College, completed June 2026</span>
+            <span class="spec__line">B.S. Mechanical Engineering, University of California, Irvine, expected 12/2028</span>
+            <span class="spec__line">A.S.-T Physics, Mission College, completed 06/2026</span>
           </dd>
         </div>
         <div class="spec__row">
@@ -417,6 +403,16 @@
        lower-trust than an email you will actually answer.
        ============================================================ -->
   <section class="section band forest" id="contact">
+
+    <!-- Decorative only: traced from a second circuit outline you
+         sent, same technique as the masthead's. aria-hidden since
+         it carries no content. -->
+    <div class="contact__track" aria-hidden="true">
+      <svg viewBox="0 0 800 252" fill="var(--ink-faint)" fill-rule="evenodd">
+        <path d="M 747.0,250.5 L 131.0,249.5 L 118.0,243.5 L 105.5,229.0 L 102.5,221.0 L 101.5,194.0 L 96.0,183.5 L 79.0,173.5 L 35.0,155.5 L 14.5,138.0 L 1.5,113.0 L -0.5,101.0 L 1.5,78.0 L 11.5,54.0 L 33.0,28.5 L 71.0,9.5 L 124.0,0.5 L 249.0,0.5 L 258.0,2.5 L 271.0,9.5 L 280.5,19.0 L 288.5,37.0 L 285.5,61.0 L 278.5,74.0 L 268.0,85.5 L 250.0,96.5 L 230.0,102.5 L 112.0,103.5 L 105.5,117.0 L 114.0,125.5 L 176.0,167.5 L 200.0,179.5 L 242.0,186.5 L 295.0,185.5 L 302.5,176.0 L 303.5,148.0 L 308.5,133.0 L 374.5,36.0 L 385.0,25.5 L 400.0,17.5 L 431.0,14.5 L 456.0,23.5 L 698.0,168.5 L 700.5,164.0 L 679.5,109.0 L 645.0,92.5 L 633.5,78.0 L 629.5,60.0 L 635.5,39.0 L 647.0,26.5 L 658.0,20.5 L 679.0,18.5 L 771.0,49.5 L 777.5,58.0 L 778.5,84.0 L 773.5,128.0 L 777.0,131.5 L 792.0,135.5 L 798.5,144.0 L 798.5,196.0 L 793.5,215.0 L 785.5,229.0 L 761.0,247.5 L 747.0,250.5 Z M 745.5,238.0 L 759.0,234.5 L 775.5,222.0 L 782.5,210.0 L 786.5,195.0 L 786.5,147.0 L 768.0,140.5 L 761.5,130.0 L 766.5,80.0 L 765.5,61.0 L 678.0,30.5 L 665.0,30.5 L 655.0,35.5 L 644.5,47.0 L 641.5,61.0 L 645.5,75.0 L 651.0,81.5 L 686.0,97.5 L 690.5,104.0 L 711.5,159.0 L 709.5,174.0 L 700.0,180.5 L 690.0,178.5 L 449.0,33.5 L 425.0,25.5 L 401.0,29.5 L 381.5,47.0 L 318.5,140.0 L 315.5,149.0 L 313.5,181.0 L 308.5,190.0 L 298.0,197.5 L 240.0,198.5 L 195.0,190.5 L 174.0,180.5 L 110.0,137.5 L 97.5,127.0 L 94.5,120.0 L 94.5,109.0 L 97.5,102.0 L 111.0,91.5 L 228.0,90.5 L 254.0,81.5 L 270.5,65.0 L 276.5,46.0 L 273.5,28.0 L 258.0,14.5 L 251.0,12.5 L 127.0,12.5 L 80.0,19.5 L 58.0,27.5 L 41.0,37.5 L 22.5,58.0 L 12.5,82.0 L 12.5,108.0 L 24.5,131.0 L 39.0,143.5 L 80.0,160.5 L 103.0,173.5 L 112.5,188.0 L 115.5,222.0 L 125.0,234.5 L 132.0,237.5 L 745.5,238.0 Z"/>
+      </svg>
+    </div>
+
     <div class="shell">
 
       <p class="mono kicker" data-reveal>Contact</p>
@@ -433,8 +429,7 @@
       <div class="contact__links mono" data-reveal style="--i:4">
         <a class="link" href="https://linkedin.com/in/tariq-akilah">LinkedIn</a>
         <a class="link" href="tel:+14083334327">(408) 333-4327</a>
-        <!-- Drop your PDF in the project root and point this at it -->
-        <a class="link" href="#">Resume (PDF)</a>
+        <a class="link" href="Tariq_Akilah_Resume.pdf">Resume (PDF)</a>
       </div>
 
     </div>
