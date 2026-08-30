@@ -1,25 +1,13 @@
 /* ============================================================
    MAIN
-   Three jobs only: header hairline, nav current-section state,
-   and scroll reveals. Everything else is CSS.
+   Two jobs only: nav current-section state and scroll reveals.
+   Everything else is CSS.
    ============================================================ */
 
 (function () {
   "use strict";
 
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  /* --- Header hairline appears once the masthead scrolls off --- */
-
-  var header = document.querySelector(".header");
-
-  if (header) {
-    var onScroll = function () {
-      header.classList.toggle("is-scrolled", window.scrollY > 8);
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-  }
 
   /* --- Nav current-section state ------------------------------- */
 

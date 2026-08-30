@@ -184,18 +184,17 @@ a { color: inherit; text-decoration: none; }
 
 /* --- 4  Header ---------------------------------------------- */
 
-/* Forest green at all times. It sits seamlessly on the masthead at
-   rest, then reads as a solid rail over the paper below. */
+/* Forest green at all times, with the amber livery line on its
+   baseline throughout: seamless on the masthead, a solid rail over
+   the paper below. */
 .header {
   position: sticky;
   top: 0;
   z-index: 50;
   background-color: var(--c-forest);
   color: var(--c-cream);
-  border-bottom: 1px solid transparent;
-  transition: border-color var(--dur) var(--ease);
+  border-bottom: 1px solid var(--c-amber);
 }
-.header.is-scrolled { border-bottom-color: var(--c-amber); }
 
 .header__inner {
   display: flex;
@@ -768,9 +767,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   flex-wrap: wrap;
   gap: var(--s-4) var(--s-6);
-  margin-top: var(--s-8);
-  padding-top: var(--s-5);
-  border-top: 1px solid var(--rule);
+  margin-top: var(--s-7);
   font-size: 1.125rem;
 }
 

@@ -31,10 +31,10 @@
                                    lightness to beige to serve as text */
 
   /* --- raw: forest green ground ------------------------------ */
-  --c-forest:         #004225;  /* deep British Racing Green */
-  --c-forest-raise:   #0B522E;
-  --c-forest-rule:    #1F5B3B;
-  --c-forest-rule-hi: #2E7350;
+  --c-forest:         #123524;  /* deep forest green */
+  --c-forest-raise:   #1D452D;
+  --c-forest-rule:    #314E3A;
+  --c-forest-rule-hi: #40664F;
   --c-cream:          #F5F5DC;  /* 10.5:1, same beige, reversed out */
   --c-peach:          #FFCF9D;  /* 8.1:1, dim/secondary text, ornament */
   --c-sage:           #4F7A5E;  /* ornament and outlines only */
