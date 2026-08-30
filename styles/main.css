@@ -369,23 +369,6 @@ a { color: inherit; text-decoration: none; }
   opacity: 0.55;
 }
 
-/* Same idea again, tall portrait subject (pressure-vessel tank). */
-.masthead__daf {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-.masthead__daf svg {
-  position: absolute;
-  right: 7%;
-  top: calc(6% + 96px);
-  width: clamp(180px, 22.8vw, 336px);
-  height: auto;
-  opacity: 0.5;
-  transform: translateX(-15mm);
-}
-
 /* Same idea again, tall nose-up subject (L1 rocket airframe drawing).
    Stands on the right of the band, clear of the title and lead. */
 .masthead__l1 {
