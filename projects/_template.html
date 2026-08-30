@@ -13,8 +13,12 @@
 
      Everything marked >>> is placeholder guidance, not content.
      Do not ship it as written. Update the docline's project number
-     and category, the <title>, the meta description, and the pager
-     links at the bottom to point at your real previous/next pages.
+     and category, the <title>, the meta description, the docline's
+     next link, and the pager links at the bottom to name and point
+     at your real previous/next pages (the next link is repeated in
+     the docline and the pager; the pager's previous link carries the
+     prior project's title, same layout as next, and on the first
+     project reads "← Back / Index" pointing at ../index.html#work).
 
      If a project can't show real images yet, whether under an NDA
      or just at a team's request, see
@@ -71,7 +75,7 @@
 
       <div class="docline micro">
         <span>&gt;&gt;&gt; Project 0X / Category</span>
-        <span>2026 / Rev. 01</span>
+        <a class="link" href="&gt;&gt;&gt;-next-project-slug.html">Next / &gt;&gt;&gt; Next Project Title →</a>
       </div>
 
       <h1 class="title-lg" style="margin-top: var(--s-8)" data-reveal>
@@ -217,7 +221,7 @@
     </section>
 
     <nav class="pager mono" style="margin-top: var(--s-10)" aria-label="Project navigation">
-      <a class="link" href="../index.html#work">← Index</a>
+      <a class="link" href="&gt;&gt;&gt;-previous-project-slug.html">← Back / &gt;&gt;&gt; Previous Project Title</a>
       <a class="link" href="&gt;&gt;&gt;-next-project-slug.html">Next / &gt;&gt;&gt; Next Project Title →</a>
     </nav>
 

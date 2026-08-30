@@ -30,6 +30,13 @@
 <link rel="stylesheet" href="styles/main.css">
 <link rel="stylesheet" href="styles/print.css">
 
+<!-- Both homepage photographs are fetched up front so they are already
+     in cache by the time they scroll into view, rather than loading in
+     mid-scroll. The headshot is above the fold, so it also gets high
+     fetch priority; the About photo just needs a head start. -->
+<link rel="preload" as="image" href="images/headshot.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="images/about me image.jpg">
+
 <!-- Gates the reveal animation's hidden state, so the page stays
      fully readable if main.js fails or JS is disabled. -->
 <script>document.documentElement.className += " js";</script>
@@ -88,7 +95,7 @@
 
         <figure class="hero__portrait figure" data-reveal style="--i:2">
           <div class="figure__box figure__box--portrait">
-            <img src="images/headshot.jpg" alt="Tariq Akilah">
+            <img src="images/headshot.jpg" alt="Tariq Akilah" width="1160" height="1500" fetchpriority="high" decoding="async">
           </div>
         </figure>
       </div>
@@ -341,7 +348,7 @@
 
         <figure class="figure" data-reveal style="margin-top: var(--s-7);">
           <div class="figure__box figure__box--natural">
-            <img src="images/about me image.jpg" alt="About me image">
+            <img src="images/about me image.jpg" alt="About me image" width="1500" height="1358" decoding="async">
           </div>
         </figure>
       </div>
