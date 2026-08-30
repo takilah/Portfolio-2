@@ -56,21 +56,25 @@
       <p class="lead" data-reveal style="--i:2; margin-top: var(--s-6)">
         Designed and FDM-printed a PETG-CF airframe on a Bambu Lab P1S,
         holding geometric symmetry under simulated flight loads at under
-        600 grams. Flew a stable Mach 0.747 profile to 4,675 ft and
+        600 grams. Flew a stable Mach 0.747 profile to 4,600 ft and
         recovered it without critical damage to earn NAR Level 1
         certification.
       </p>
 
     </div>
+
+    <a class="scroll-cue" href="#approach">
+      <span class="micro">Images below</span>
+      <svg class="scroll-cue__arrow" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="8" y1="2" x2="8" y2="19"/>
+        <polyline points="2,13 8,19 14,13"/>
+      </svg>
+    </a>
   </section>
 
   <article class="section shell" id="body">
 
     <dl class="spec" data-reveal>
-      <div class="spec__row">
-        <dt>Timeframe</dt>
-        <dd>&gt;&gt;&gt; Add the build and flight date</dd>
-      </div>
       <div class="spec__row">
         <dt>Team</dt>
         <dd>Personal build</dd>
@@ -85,19 +89,15 @@
       </div>
       <div class="spec__row">
         <dt>Constraints</dt>
-        <dd>Under 600 grams, geometric symmetry under OpenRocket-simulated flight loads</dd>
+        <dd>NAR high-power requirements, under 600 grams, geometric symmetry under OpenRocket-simulated flight loads</dd>
       </div>
       <div class="spec__row">
         <dt>Tools</dt>
         <dd>Fusion 360, OpenRocket, FDM (PETG-CF, Bambu Lab P1S)</dd>
       </div>
       <div class="spec__row">
-        <dt>Methods</dt>
-        <dd>&gt;&gt;&gt; How structural rigidity, assembly, and motor retention were verified pre-flight</dd>
-      </div>
-      <div class="spec__row">
         <dt>Status</dt>
-        <dd>Stable Mach 0.747 flight to 4,675 ft, recovered without critical damage, NAR Level 1 High-Power Certification earned</dd>
+        <dd>Stable Mach 0.747 flight to 4,600 ft, recovered without critical damage, NAR Level 1 High-Power Certification earned</dd>
       </div>
     </dl>
 
@@ -108,47 +108,75 @@
       </header>
       <div class="prose">
         <p>
-          &gt;&gt;&gt; Two or three sentences on the actual constraint, not the
-          assignment. What was underperforming, what it cost the car, and which
-          number you were trying to move. State the operating point and the
-          units.
+         The goal was to design, manufacture, launch, and
+          recover a rocket to earn my National Association of Rocketry
+          (NAR) Level 1 High-Power Certification. Beyond that, I set my own performance target: keep the airframe under 600 grams without
+          giving up the structural rigidity a high-power motor demands.
+         
         </p>
         <p>
-          &gt;&gt;&gt; If a rule or standard bounded the design, name it. Readers
-          in your industry recognize those citations, and they establish that
-          you worked inside real limits rather than an open-ended exercise.
+          Getting there meant clearing two separate bars. The airframe
+          had to meet all NAR high-power requirements and pass a
+          preflight inspection from a NAR Level 3 member, and the flight
+          itself had to end in a recovery clean enough to leave no
+          flight-critical damage. Missing either one meant the attempt
+          failed, regardless of how well the rest of the build performed.
         </p>
       </div>
     </section>
 
     <!-- >>> APPROACH --------------------------------------- -->
-    <section class="block" data-reveal>
+    <section class="block" data-reveal id="approach">
       <header class="block__head">
         <p class="mono">Approach</p>
       </header>
       <div class="prose">
         <p>
-          &gt;&gt;&gt; How you decided, not everything you did. Which load case
-          or ride height you chose and why, what you modeled versus what you
-          measured, and where the model disagreed with reality.
+          Modeled the airframe in OpenRocket first, then moved into
+          Fusion 360 to design the individual components for FDM
+          printing. I tested a few different fin geometries and thicknesses, as well as print
+          materials before settling on PETG-CF. It held up under
+          simulated flight loads without pushing the rocket over the
+          600 gram target.
         </p>
         <p>
-          &gt;&gt;&gt; Include one decision you got wrong and corrected. It
-          costs nothing and it is the strongest credibility signal on a page
-          like this. Engineers trust people who report their own revisions.
+          The first launch attempt failed on recovery. The parachute
+          detached from the airframe, and the rocket free-fell and could not be recovered. I redesigned the fin can from the ground up, integrating the recovery system and motor retainer into one design.
+          I ran the shock cord the full length of
+          the fin can and looped it back around itself so there was no
+          way for it to separate from the airframe short of actually
+          cutting it.
         </p>
       </div>
 
-      <div class="figures" style="margin-top: var(--s-7)">
+      <div style="margin-top: var(--s-7); max-width: 1040px">
         <figure class="figure">
-          <!-- Swap for <img src="..." alt="..."> and describe what it shows -->
-          <div class="figure__box"></div>
-          <figcaption class="micro">Fig. 01 / Airframe, isometric</figcaption>
+          <div class="figure__box" style="aspect-ratio: 2117 / 560">
+            <img src="../images/L1%20OpenRocket.png" alt="OpenRocket single-stage layout diagram with mass, apogee, and velocity readouts">
+          </div>
+          <figcaption class="micro">Fig. 01 / Airframe layout, OpenRocket</figcaption>
         </figure>
-        <figure class="figure">
-          <div class="figure__box"></div>
-          <figcaption class="micro">Fig. 02 / Fin can and motor retention</figcaption>
-        </figure>
+
+        <div style="display: flex; gap: var(--s-5); align-items: flex-start; margin-top: var(--s-6)">
+          <figure class="figure" style="flex: 2.8 1 0; min-width: 0">
+            <div class="figure__box" style="aspect-ratio: 1127 / 745">
+              <img src="../images/L1%20Nose%20Fusion%20360.png" alt="Nose cone CAD model in Fusion 360">
+            </div>
+            <figcaption class="micro">Fig. 02 / Nose cone, Fusion 360</figcaption>
+          </figure>
+          <figure class="figure" style="flex: 1 1 0; min-width: 0">
+            <div class="figure__box" style="aspect-ratio: 514 / 950">
+              <img src="../images/L1%20Fusion360.png" alt="Fin can CAD model in Fusion 360">
+            </div>
+            <figcaption class="micro">Fig. 03 / Fin can, Fusion 360</figcaption>
+          </figure>
+          <figure class="figure" style="flex: 1.22 1 0; min-width: 0">
+            <div class="figure__box" style="aspect-ratio: 616 / 934">
+              <img src="../images/L1%20Section%20View.png" alt="Fin can section view in Fusion 360, showing wall thickness and motor mount tube">
+            </div>
+            <figcaption class="micro">Fig. 04 / Fin can, section view</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -159,22 +187,34 @@
       </header>
       <div class="prose">
         <p>
-          &gt;&gt;&gt; Measured outcomes with units, and the conditions they
-          were measured under. If the result missed the target, say by how much
-          and what you learned. A quantified miss reads better than a vague
-          success.
+          The redesigned recovery system held up perfectly on the second attempt. The
+          rocket flew a stable profile to Mach 0.747 and 4,600 ft, then
+          came down and was recovered without any flight-critical damage.
+        </p>
+        <p>
+          That flight, combined with a preflight inspection from a NAR
+          Level 3 mentor covering structural rigidity, construction and
+          assembly, and motor retention and tolerancing, earned me my NAR
+          Level 1 High-Power Certification, meeting the objective in
+          full.
         </p>
       </div>
 
-      <div class="figures" style="margin-top: var(--s-7)">
-        <figure class="figure">
-          <div class="figure__box"></div>
-          <figcaption class="micro">Fig. 03 / Flight trajectory</figcaption>
-        </figure>
-        <figure class="figure">
-          <div class="figure__box"></div>
-          <figcaption class="micro">Fig. 04 / Recovered airframe, post-flight</figcaption>
-        </figure>
+      <div style="margin-top: var(--s-7); max-width: 950px">
+        <div style="display: flex; gap: var(--s-5); align-items: flex-start">
+          <figure class="figure" style="flex: 0 0 300px">
+            <div class="figure__box" style="aspect-ratio: auto">
+              <video src="../images/L1%20Flight.mp4" controls playsinline style="width: 100%; height: auto; display: block; background: #000"></video>
+            </div>
+            <figcaption class="micro">Fig. 05 / L1 certification flight</figcaption>
+          </figure>
+          <figure class="figure" style="flex: 1 1 0; min-width: 0">
+            <div class="figure__box" style="aspect-ratio: 5712 / 3213">
+              <img src="../images/L1%20cert%20rocekt.jpg" alt="Airframe and recovery gear after flight and recovery">
+            </div>
+            <figcaption class="micro">Fig. 06 / Airframe, post-flight and recovery</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 

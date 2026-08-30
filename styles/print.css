@@ -50,6 +50,8 @@
   .masthead__chassis,
   .masthead__rocket,
   .masthead__stage,
+  .scroll-cue,
+  .masthead__coilover,
   .contact__track,
   .project__go { display: none; }
 

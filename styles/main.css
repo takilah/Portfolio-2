@@ -322,6 +322,71 @@ a { color: inherit; text-decoration: none; }
   transform: rotate(45deg);
 }
 
+/* A small nudge in the corner of a masthead, hinting there's more
+   below and linking straight to it. Sits after .shell in DOM order
+   so it paints on top of the decorative track/chassis art without
+   needing z-index, same trick as .masthead > .shell itself. */
+.scroll-cue {
+  position: absolute;
+  right: var(--gutter);
+  bottom: calc(var(--s-6) + 76px);
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  color: var(--ink-dim);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease);
+}
+.scroll-cue:hover { color: var(--accent); }
+.scroll-cue .micro {
+  font-size: 0.85rem;
+  letter-spacing: var(--track-micro);
+}
+.scroll-cue__arrow {
+  width: 20px;
+  height: 32px;
+  flex-shrink: 0;
+  animation: scroll-cue-bounce 1.8s ease-in-out infinite;
+}
+@keyframes scroll-cue-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+/* Same idea as .masthead__chassis: sits beside the title, not
+   spanning the whole section. */
+.masthead__coilover {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.masthead__coilover svg {
+  position: absolute;
+  right: 6%;
+  top: calc(8% + 113px);
+  width: clamp(230px, 27.6vw, 437px);
+  height: auto;
+  opacity: 0.55;
+}
+
+/* Same idea again, tall portrait subject (pressure-vessel tank). */
+.masthead__daf {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.masthead__daf svg {
+  position: absolute;
+  right: 7%;
+  top: calc(6% + 96px);
+  width: clamp(180px, 22.8vw, 336px);
+  height: auto;
+  opacity: 0.5;
+  transform: translateX(-15mm);
+}
+
 /* Document control line. One only, or it becomes cosplay. */
 .docline {
   display: flex;
@@ -708,7 +773,7 @@ a { color: inherit; text-decoration: none; }
   text-transform: uppercase;
 }
 
-.block { margin-top: var(--s-9); }
+.block { margin-top: var(--s-9); scroll-margin-top: var(--header-h); }
 
 .block__head {
   padding-bottom: var(--s-4);

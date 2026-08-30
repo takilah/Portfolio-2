@@ -54,15 +54,23 @@
       <hr class="rule-accent" data-reveal style="--i:1; margin-top: var(--s-6)">
 
       <p class="lead" data-reveal style="--i:2; margin-top: var(--s-6)">
-        Built a motorized trike from recycled material for under $500 on
-        a five-week deadline. Self-taught MIG welding for the 0.0478 in.
-        wall steel tube chassis, rebuilt a seized 212cc engine, and mated
-        a go-kart rear axle to a bicycle fork with a corrected head angle.
-        Held a 180 lb rider through drifting loads with almost no chassis
+        Built a motorized trike from recycled material on a $500 budget 
+        a five-week deadline. Self-taught MIG welding for the 1.75 mm
+        wall steel tube chassis, rebuilt a seized Predator 212cc engine, and mated
+        a go-kart rear axle to a bicycle front fork for steering.
+        Held a 180 lb rider through cruising and drifting loads with minimal to no chassis
         flex, and ran 40 mph.
       </p>
 
     </div>
+
+    <a class="scroll-cue" href="#approach">
+      <span class="micro">Images below</span>
+      <svg class="scroll-cue__arrow" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="8" y1="2" x2="8" y2="19"/>
+        <polyline points="2,13 8,19 14,13"/>
+      </svg>
+    </a>
   </section>
 
   <article class="section shell" id="body">
@@ -70,7 +78,7 @@
     <dl class="spec" data-reveal>
       <div class="spec__row">
         <dt>Timeframe</dt>
-        <dd>2023, five-week build</dd>
+        <dd>2024, five-week build</dd>
       </div>
       <div class="spec__row">
         <dt>Team</dt>
@@ -86,19 +94,15 @@
       </div>
       <div class="spec__row">
         <dt>Constraints</dt>
-        <dd>Under $500 budget, five-week deadline, recycled material only</dd>
+        <dd>Under $500 budget, five-week deadline</dd>
       </div>
       <div class="spec__row">
         <dt>Tools</dt>
         <dd>Fusion 360, MIG welding</dd>
       </div>
       <div class="spec__row">
-        <dt>Methods</dt>
-        <dd>&gt;&gt;&gt; How the chassis was modeled and how head angle was tuned for high-speed stability</dd>
-      </div>
-      <div class="spec__row">
         <dt>Status</dt>
-        <dd>Held a 180 lb rider through lateral drifting loads with minimal to no chassis flex, ran a 40 mph top speed</dd>
+        <dd>Held a 180 lb rider through cruising and drifting loads with minimal to no chassis flex, ran a 40 mph top speed</dd>
       </div>
     </dl>
 
@@ -109,47 +113,65 @@
       </header>
       <div class="prose">
         <p>
-          &gt;&gt;&gt; Two or three sentences on the actual constraint, not the
-          assignment. What was underperforming, what it cost the car, and which
-          number you were trying to move. State the operating point and the
-          units.
+          The objective was to design and build a functioning trike
+          within a five-week deadline, staying under a $500 budget.
+          Beyond that, the chassis had to hold my own body weight,
+          170-180 pounds at the time, without any major flex, and I
+          wanted a real model to build from rather than working off
+          sketches. So, I
+          modeled the chassis in Fusion 360 to have something to
+          reference while welding.
         </p>
         <p>
-          &gt;&gt;&gt; If a rule or standard bounded the design, name it. Readers
-          in your industry recognize those citations, and they establish that
-          you worked inside real limits rather than an open-ended exercise.
+          I also decided to teach myself MIG welding from scratch and weld together
+          the entire chassis. My goal was to have the trike fully running by
+          the end of the five-week program so I could present it at a design symposium.
         </p>
       </div>
     </section>
 
     <!-- >>> APPROACH --------------------------------------- -->
-    <section class="block" data-reveal>
+    <section class="block" data-reveal id="approach">
       <header class="block__head">
         <p class="mono">Approach</p>
       </header>
       <div class="prose">
         <p>
-          &gt;&gt;&gt; How you decided, not everything you did. Which load case
-          or ride height you chose and why, what you modeled versus what you
-          measured, and where the model disagreed with reality.
+          Modeled the chassis in Fusion 360, then built it out of
+          1.75 mm wall steel square tubing, teaching myself MIG
+          welding from scratch as I went. I had to make some design adjustments
+          on the fly, and the welds were not the prettiest, but the chassis came together solid.
         </p>
         <p>
-          &gt;&gt;&gt; Include one decision you got wrong and corrected. It
-          costs nothing and it is the strongest credibility signal on a page
-          like this. Engineers trust people who report their own revisions.
+          The powertrain needed more work than expected. The Predator engine
+          had seized, and getting it running again meant working through a
+          clogged carburetor, a bad spark plug, and the seized flywheel. For the drivetrain, I mated a go-kart rear axle to a
+          bicycle front fork and tuned the head angle for steering
+          stability at working speed.
         </p>
       </div>
 
-      <div class="figures" style="margin-top: var(--s-7)">
-        <figure class="figure">
-          <!-- Swap for <img src="..." alt="..."> and describe what it shows -->
-          <div class="figure__box"></div>
-          <figcaption class="micro">Fig. 01 / Chassis, as welded</figcaption>
-        </figure>
-        <figure class="figure">
-          <div class="figure__box"></div>
-          <figcaption class="micro">Fig. 02 / Engine rebuild</figcaption>
-        </figure>
+      <div style="margin-top: var(--s-7); max-width: 1200px">
+        <div style="display: flex; gap: var(--s-5); align-items: flex-start">
+          <figure class="figure" style="flex: 1.96 1 0; min-width: 0">
+            <div class="figure__box" style="aspect-ratio: 1064 / 726">
+              <img src="../images/Trike%20Chassis%20Model.png" alt="Trike chassis frame CAD model in Fusion 360">
+            </div>
+            <figcaption class="micro">Fig. 01 / Chassis, Fusion 360 model</figcaption>
+          </figure>
+          <figure class="figure" style="flex: 1 1 0; min-width: 0">
+            <div class="figure__box" style="aspect-ratio: 3024 / 4032">
+              <img src="../images/Trike%20Chassis%201.jpg" alt="Welded chassis frame section on the garage floor">
+            </div>
+            <figcaption class="micro">Fig. 02 / Chassis, as welded</figcaption>
+          </figure>
+          <figure class="figure" style="flex: 1.78 1 0; min-width: 0">
+            <div class="figure__box" style="aspect-ratio: 4032 / 3024">
+              <img src="../images/Trike%20Chassis%202.jpeg" alt="Chassis with front fork, rear axle, and sprocket fitted, mid-weld">
+            </div>
+            <figcaption class="micro">Fig. 03 / Chassis, rear axle fitted</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -160,22 +182,34 @@
       </header>
       <div class="prose">
         <p>
-          &gt;&gt;&gt; Measured outcomes with units, and the conditions they
-          were measured under. If the result missed the target, say by how much
-          and what you learned. A quantified miss reads better than a vague
-          success.
+          The trike came together and ran great. It held a
+          180 lb rider through lateral drifting loads with minimal to no
+          chassis flex, and the rebuilt engine and corrected steering
+          geometry got it to a 40 mph top speed.
+        </p>
+        <p>
+          Unfortunately, I ran over on both time and budget. The wheels I had
+          originally sourced did not fit the rear axle, so I had to
+          order a replacement set that pushed the total ~$100 past
+          the $500 target and beyond the five-week deadline. Regardless, this project was a success.
         </p>
       </div>
 
-      <div class="figures" style="margin-top: var(--s-7)">
-        <figure class="figure">
-          <div class="figure__box"></div>
-          <figcaption class="micro">Fig. 03 / Completed build</figcaption>
-        </figure>
-        <figure class="figure">
-          <div class="figure__box"></div>
-          <figcaption class="micro">Fig. 04 / Road test</figcaption>
-        </figure>
+      <div style="margin-top: var(--s-7); max-width: 660px">
+        <div style="display: flex; gap: var(--s-5); align-items: flex-start">
+          <figure class="figure" style="flex: 0.65 1 0; min-width: 0">
+            <div class="figure__box" style="aspect-ratio: auto">
+              <video src="../images/Adobe%20Express%20-%20Trike%20Vid.mp4" controls playsinline style="width: 100%; height: auto; display: block; background: #000"></video>
+            </div>
+            <figcaption class="micro">Fig. 04 / Trike, road test</figcaption>
+          </figure>
+          <figure class="figure" style="flex: 1 1 0; min-width: 0">
+            <div class="figure__box" style="aspect-ratio: 4032 / 3024">
+              <img src="../images/Completed%20Trike.jpeg" alt="Completed motorized trike with Predator engine, dual rear wheels, and bicycle front fork">
+            </div>
+            <figcaption class="micro">Fig. 05 / Completed trike</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
