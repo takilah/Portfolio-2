@@ -319,7 +319,7 @@ a { color: inherit; text-decoration: none; }
   width: clamp(427px, 45.5vw, 739px);
   height: auto;
   opacity: 0.55;
-  transform: rotate(45deg);
+  transform: translateY(5mm) rotate(45deg);
 }
 
 /* A small nudge in the corner of a masthead, hinting there's more
@@ -385,6 +385,24 @@ a { color: inherit; text-decoration: none; }
   height: auto;
   opacity: 0.5;
   transform: translateX(-15mm);
+}
+
+/* Same idea again, tall nose-up subject (L1 rocket airframe drawing).
+   Stands on the right of the band, clear of the title and lead. */
+.masthead__l1 {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.masthead__l1 svg {
+  position: absolute;
+  right: 8%;
+  top: 9%;
+  width: clamp(66px, 8.5vw, 108px);
+  height: auto;
+  opacity: 0.55;
+  transform: translate(-40mm, 20mm);
 }
 
 /* Document control line. One only, or it becomes cosplay. */
@@ -681,6 +699,14 @@ a { color: inherit; text-decoration: none; }
 }
 
 .figure__box--portrait { aspect-ratio: 4 / 5; }
+
+/* Let the image set its own height so nothing is cropped: the full
+   frame shows at the image's native aspect ratio. */
+.figure__box--natural { aspect-ratio: auto; }
+.figure__box--natural img {
+  height: auto;
+  object-fit: contain;
+}
 
 /* An image slot deliberately withheld, rather than one simply not
    filled in yet. The label sits inside the frame itself, at the

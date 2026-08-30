@@ -228,7 +228,17 @@
     <span>&copy; <span data-year>2026</span></span>
   </div>
 </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const trikeVideo = document.querySelector('video[src*="Adobe Express - Trike Vid"]');
 
+    if (trikeVideo) {
+      trikeVideo.addEventListener('play', () => {
+        trikeVideo.muted = true;
+      }, { once: true });
+    }
+  });
+</script>
 <script src="../js/main.js" defer></script>
 </body>
 </html>
