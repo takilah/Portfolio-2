@@ -119,7 +119,7 @@
       <header class="block__head">
         <p class="mono">Objective</p>
       </header>
-      <div class="prose">
+      <div class="prose" style="max-width: none">
         <p>
           Thrust Stack's airframe uses active canards to correct roll in
           flight, but the flight control team had no data on how much roll
@@ -141,7 +141,7 @@
       <header class="block__head">
         <p class="mono">Approach</p>
       </header>
-      <div class="prose">
+      <div class="prose" style="max-width: none">
         <p>
           Built a SimScale sweep across the full deflection and velocity
           range, running 244 cases and about 6,200 core-hours of simulations.
@@ -193,19 +193,27 @@
       <header class="block__head">
         <p class="mono">Result</p>
       </header>
-      <div class="prose">
+      <div class="prose" style="max-width: none">
         <p>
           Converted the 162-point roll torque coefficient dataset into
           angular acceleration using the airframe's roll moment of inertia,
           then delivered it to the flight control team as the lookup table
           the controller reads against commanded deflection and measured
-          rocket speed.
+          rocket speed. Every point in that dataset only qualified once
+          mesh refinement drove its roll torque coefficient to within 5%
+          of the previous cell count.
         </p>
         <p>
           The conversion held up cleanly to a maximum deflection of 15
-          degrees, which now sets the controller's usable range. The rocket
-          is scheduled to fly in January 2027 at the Friends of Amateur
-          Rocketry site in the Mojave Desert, California.
+          degrees, which now sets the controller's usable range. The
+          custom servo housing paid off aerodynamically too: sitting flush
+          with the airframe instead of exposed cut the rocket's drag
+          coefficient by 26%. The rocket is scheduled to fly in January
+          2027 at the Friends of Amateur Rocketry site in the Mojave
+          Desert, California.
+        </p>
+        <p>
+          Here is a live demonstration of canard actuation:
         </p>
       </div>
 
@@ -225,6 +233,13 @@
           </figure>
         </div>
       </div>
+
+      <figure class="figure" style="margin-top: var(--s-6); max-width: 940px">
+        <div class="figure__box" style="aspect-ratio: 16 / 9">
+          <iframe src="https://www.youtube.com/embed/M3sM7GVvhVc" title="Canard actuation demonstration" style="width: 100%; height: 100%; display: block; border: 0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <figcaption class="micro">Fig. 07 / Canard actuation, live demonstration</figcaption>
+      </figure>
     </section>
 
     <nav class="pager mono" style="margin-top: var(--s-10)" aria-label="Project navigation">
